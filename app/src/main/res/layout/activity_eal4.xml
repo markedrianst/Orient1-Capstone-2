@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#468288"
+    tools:context=".EAL4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangleContainer"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_header"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circular_button"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/circular_button"
+                android:contentDescription="@string/home"
+                android:src="@drawable/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lessonsText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_italic"
+                android:text="IV-Education and Learning"
+                android:textColor="#468288"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnHome"
+                app:layout_constraintStart_toEndOf="@id/backButton"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleContainer"
+        tools:ignore="SpeakableTextPresentCheck">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="24dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:src="@drawable/image125" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:fontFamily="@font/poppins_bold"
+                      android:justificationMode="inter_word"
+                      android:paddingStart="10dp"
+                      android:text="EDUCATION"
+                      android:textColor="#FFFFFF"
+                      android:textSize="15dp"
+                      tools:ignore="TextSizeCheck"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:justificationMode="inter_word"
+                       android:padding="10dp"
+                        android:text="is the process of teaching, or the imparting of knowledge, skills, values,
+beliefs, and habits which can be beneficial
+to an individual."
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp"
+                        tools:ignore="TextSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image126" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:text="LEARNING"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/descriptionText5"
+            android:text="Is the process of acquiring
+new, or modifying existing
+knowledge, behaviors, skills,
+values or preferences."
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <TextView
+            android:text="3 types of Education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image127" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:text="Formal Education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/descriptionText6"
+            android:text="Is the process of acquiring
+new, or modifying existing
+knowledge, behaviors, skills,
+values or preferences."
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image128" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:text="Informal Education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/descriptionText7"
+            android:text="Is the process of acquiring
+new, or modifying existing
+knowledge, behaviors, skills,
+values or preferences."
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image129" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:text="Non-formal Education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/descriptionText8"
+            android:text="Is the process of acquiring
+new, or modifying existing
+knowledge, behaviors, skills,
+values or preferences."
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/descriptionText9"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/image130" />
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/image131" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/descriptionText10"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <TextView
+            android:text="Evolution of Education:\n
+Then vs. Now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="26dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/image132" />
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/image133" />
+
+        </LinearLayout>
+        <TextView
+            android:text="Access and Inclusion"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/image138" />
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/image139" />
+
+        </LinearLayout>
+        <TextView
+            android:text="Teaching Methods"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/image136" />
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/image137" />
+
+        </LinearLayout>
+        <TextView
+            android:text="Curriculum Content"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/space_0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/image134" />
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/image135" />
+
+        </LinearLayout>
+        <TextView
+            android:text="Role of Technology"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+        <TextView
+            android:text="Famous Quotations on Education and Learning"
+            android:justificationMode="inter_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+
+            android:textSize="24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/carouselRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:overScrollMode="never"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <!-- White background with text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="end|center_vertical"
+                android:orientation="horizontal"
+                android:background="#8ED9D9D9"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="24dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="DIFFERENT LEARNING\nSTYLES"
+                    android:textColor="#35616E"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Overlapping image -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="140dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center_vertical|start"
+                android:src="@drawable/diflearn"
+                android:elevation="4dp"
+                android:layout_marginStart="16dp" />
+        </FrameLayout>
+
+<!--Setup carousel1-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carouselRecyclerView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            android:overScrollMode="always"
+            />
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
