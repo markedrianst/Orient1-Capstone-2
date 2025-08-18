@@ -1,10 +1,12 @@
 package com.example.orient1;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,46 +21,55 @@ public class dctlayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dctlayout);
         initializeButtons();
+        ImageButton homeButton = findViewById(R.id.btnHome);
+        homeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(dctlayout.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+        });
+
     }
 
     private void initializeButtons() {
         // Back button
-        findViewById(R.id.back1).setOnClickListener(v -> finish());
+        findViewById(R.id.backButton).setOnClickListener(v -> finish());
 
         // Building buttons with responsive dialogs
         setupButton(R.id.btn_st_nicholas,
                 "St. Nicholas Building",
-                R.drawable.saintdom,
+                R.drawable.sd,
                 getString(R.string.st_nicholas_description));
 
         setupButton(R.id.btn_san_lorenzo,
                 "San Lorenzo Ruiz Building",
-                R.drawable.frmariano,
+                R.drawable.slr,
                 getString(R.string.san_lorenzo_description));
 
         setupButton(R.id.btn_our_lady_peace,
                 "Our Lady of Peace Building",
-                R.drawable.dctlogo,
+                R.drawable.olp,
                 getString(R.string.our_lady_peace_description));
 
         setupButton(R.id.btn_holy_rosary,
                 "Holy Rosary Building",
-                R.drawable.saintdom,
+                R.drawable.hr,
                 getString(R.string.holy_rosary_description));
 
         setupButton(R.id.btn_st_dominic,
                 "St. Dominic Building",
-                R.drawable.sister,
+                R.drawable.sd,
                 getString(R.string.st_dominic_description));
 
         setupButton(R.id.btn_our_lady_fatima,
                 "Our Lady of Fatima Building",
-                R.drawable.dctlogo,
+                R.drawable.olp,
                 getString(R.string.our_lady_fatima_description));
 
         setupButton(R.id.btn_st_catherine,
                 "St. Catherine of Siena Building",
-                R.drawable.sister,
+                R.drawable.scs,
                 getString(R.string.st_catherine_description));
     }
 
