@@ -60,6 +60,8 @@
             </LinearLayout>
 
             <ImageButton
+                android:visibility="invisible"
+
                 android:id="@+id/aboutButton"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
@@ -88,6 +90,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnOne"
+                    android:visibility="invisible"
                     style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="280dp"
                     android:layout_height="98dp"
@@ -110,6 +113,8 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnTwo"
+                    android:visibility="invisible"
+
                     style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="280dp"
                     android:layout_height="98dp"
@@ -132,6 +137,8 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnThree"
+                    android:visibility="invisible"
+
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="280dp"
                     android:layout_height="98dp"
