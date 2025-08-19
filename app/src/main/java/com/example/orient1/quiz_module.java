@@ -72,7 +72,7 @@ public class quiz_module extends AppCompatActivity {
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(quiz_module.this, MainActivity.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
+            overridePendingTransition(  R.anim.fade_in_from_bottom,R.anim.fade_out_to_bottom);
             finish();
         });
 
