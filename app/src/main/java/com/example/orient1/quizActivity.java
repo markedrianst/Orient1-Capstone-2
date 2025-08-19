@@ -16,6 +16,7 @@
 
     import androidx.appcompat.app.AlertDialog;
     import androidx.appcompat.app.AppCompatActivity;
+    import androidx.appcompat.app.AppCompatDelegate;
 
     import java.util.ArrayList;
     import java.util.Collections;
@@ -82,6 +83,7 @@
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
             // Get intent data
             String difficulty = getIntent().getStringExtra("difficulty");

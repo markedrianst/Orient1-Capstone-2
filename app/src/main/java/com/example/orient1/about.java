@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,6 +19,8 @@ public class about extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_about);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         // Apply window insets to root view
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -53,22 +56,22 @@ public class about extends AppCompatActivity {
         configureWebView(developerCreditsWebView);
     }
 
-    private String createJustifiedHtml(String text) {
-        return "<html><head>" +
-                "<style type='text/css'>" +
-                "body {" +
-                "  text-align: justify;" +
-                "  color: #FFFFFF;" +
-                "  font-size: 20px;" +
-                "  line-height: 1.5;" +
-                "  font-family: 'Poppins', sans-serif;" +
-                "  margin: 0;" +
-                "  padding: 0;" +
-                "}" +
-                "</style>" +
-                "</head>" +
-                "<body>" + text + "</body></html>";
-    }
+        private String createJustifiedHtml(String text) {
+            return "<html><head>" +
+                    "<style type='text/css'>" +
+                    "body {" +
+                    "  text-align: justify;" +
+                    "  color: #FFFFFF;" +
+                    "  font-size: 20px;" +
+                    "  line-height: 1.5;" +
+                    "  font-family: 'Poppins', sans-serif;" +
+                    "  margin: 0;" +
+                    "  padding: 0;" +
+                    "}" +
+                    "</style>" +
+                    "</head>" +
+                    "<body>" + text + "</body></html>";
+        }
 
     private void configureWebView(WebView webView) {
         webView.setBackgroundColor(Color.TRANSPARENT);

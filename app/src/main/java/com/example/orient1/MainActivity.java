@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.widget.TextViewCompat;
 
 import com.google.android.material.button.MaterialButton;
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
         MaterialButton btnOne = findViewById(R.id.btnOne);
@@ -59,6 +64,37 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnAbout = findViewById(R.id.aboutButton);
         TextView title = findViewById(R.id.textOrient);
         TextView footer = findViewById(R.id.footerText);
+        // Load the fade-in animation
+        Animation fadeIn1 = AnimationUtils.loadAnimation(this, R.anim.fade_in_from_bottom);
+        Animation fadeIn2 = AnimationUtils.loadAnimation(this, R.anim.fade_in_from_bottom);
+        Animation fadeIn3 = AnimationUtils.loadAnimation(this, R.anim.fade_in_from_bottom);
+        Animation fadeIn4 = AnimationUtils.loadAnimation(this, R.anim.fade_in_from_bottom);
+
+// Use separate delayed posts to create the staggered timing
+
+        new Handler().postDelayed(() -> {
+            btnAbout.setVisibility(View.VISIBLE);
+            btnAbout.startAnimation(fadeIn4);
+        }, 300); // Fourth button
+
+        new Handler().postDelayed(() -> {
+            btnOne.setVisibility(View.VISIBLE);
+            btnOne.startAnimation(fadeIn1);
+        }, 500); // First button
+
+        new Handler().postDelayed(() -> {
+            btnTwo.setVisibility(View.VISIBLE);
+            btnTwo.startAnimation(fadeIn2);
+        }, 800); // Second button
+
+        new Handler().postDelayed(() -> {
+            btnThree.setVisibility(View.VISIBLE);
+            btnThree.startAnimation(fadeIn3);
+        }, 1100); // Third button
+
+
+
+
 
         // Apply responsive adjustments initially
         applyResponsiveAdjustments();
@@ -77,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         disableNavigationViews();
 
         startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
     }
 
     private void disableNavigationViews() {

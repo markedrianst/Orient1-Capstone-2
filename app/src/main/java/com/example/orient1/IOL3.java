@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -81,6 +82,7 @@ public class IOL3 extends AppCompatActivity {
         setContentView(R.layout.activity_iol3);
 
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         RecyclerView recycler1 = findViewById(R.id.recyclerView);
         recycler1.setLayoutManager(new LinearLayoutManager(this));

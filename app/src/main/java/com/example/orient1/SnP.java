@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
@@ -41,6 +42,7 @@ public class SnP extends AppCompatActivity {
         cardItems.add(new CardAdapter.CardItem(R.drawable.practical_nursing, "Practical Nursing Program"));
         cardItems.add(new CardAdapter.CardItem(R.drawable.contact, "Contact Center Training"));
         cardItems.add(new CardAdapter.CardItem(R.drawable.restaurant, "Restaurant Management"));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         // Setup RecyclerView
         recyclerView = findViewById(R.id.recyclerView);

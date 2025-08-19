@@ -15,6 +15,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         // Delay for 3 seconds (3000 ms), then go to MainActivity
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashScreen.this, MainActivity.class);
