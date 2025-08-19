@@ -72,7 +72,7 @@ public class lessons_module extends AppCompatActivity {
         ovalButton1.setOnClickListener(v -> {
             Intent intent = new Intent(lessons_module.this, Dctculture.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
         // Oval Button 2 - opens SnP activity

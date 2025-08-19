@@ -80,17 +80,17 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             btnOne.setVisibility(View.VISIBLE);
             btnOne.startAnimation(fadeIn1);
-        }, 600); // First button
+        }, 500); // First button
 
         new Handler().postDelayed(() -> {
             btnTwo.setVisibility(View.VISIBLE);
             btnTwo.startAnimation(fadeIn2);
-        }, 900); // Second button
+        }, 800); // Second button
 
         new Handler().postDelayed(() -> {
             btnThree.setVisibility(View.VISIBLE);
             btnThree.startAnimation(fadeIn3);
-        }, 1200); // Third button
+        }, 1100); // Third button
 
 
 
