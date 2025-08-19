@@ -26,15 +26,17 @@
         <TextView
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
             android:background="#D76161"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="70dp"
             android:text="DCT Culture - EASY LEVEL"
             android:textColor="#FFFFFF"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TextSizeCheck" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
