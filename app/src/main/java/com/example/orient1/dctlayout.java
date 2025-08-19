@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class dctlayout extends AppCompatActivity {
@@ -21,6 +22,8 @@ public class dctlayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dctlayout);
         initializeButtons();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         ImageButton homeButton = findViewById(R.id.btnHome);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(dctlayout.this, MainActivity.class);
