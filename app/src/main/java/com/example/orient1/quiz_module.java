@@ -21,6 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class quiz_module extends AppCompatActivity {
+    @Override
+    public void onBackPressed() {
+        overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
