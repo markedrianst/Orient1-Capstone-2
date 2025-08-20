@@ -13,9 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
-import com.google.android.material.button.MaterialButton;
-
 public class lessons_module extends AppCompatActivity {
+    @Override
+    public void onBackPressed() {
+        overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +65,7 @@ public class lessons_module extends AppCompatActivity {
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(lessons_module.this, MainActivity.class);
             startActivity(intent);
-            overridePendingTransition(  R.anim.fade_in_from_bottom,R.anim.fade_out_to_bottom);
+            overridePendingTransition(R.anim.fade_in_from_bottom, R.anim.fade_out_to_bottom);
             finish();
         });
 
