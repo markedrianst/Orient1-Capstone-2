@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +8,11 @@
 
     android:fitsSystemWindows="true"
     tools:context=".Dctculture">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rectangleContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -53,14 +53,13 @@
 
             <TextView
                 android:id="@+id/lessonsText"
-                android:text="I - The Dominican College
-of Tarlac Culture"
-                android:layout_width="235dp"
-                android:layout_height="48dp"
-                android:layout_margin="10dp"
-                android:padding="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/poppins_italic"
                 android:gravity="center"
+                android:text="I - The Dominican College of Tarlac Culture"
                 android:textColor="#468288"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -69,6 +68,7 @@ of Tarlac Culture"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <!-- Content Scroll View - made responsive -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollContent"
@@ -88,12 +88,12 @@ of Tarlac Culture"
 
             <!-- First Image Card - made responsive -->
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="6dp">
 
                 <ImageView
@@ -130,17 +130,17 @@ of Tarlac Culture"
 
             <!-- Second Image Card - made responsive -->
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="25dp"
                 app:cardElevation="6dp">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
                     android:src="@drawable/olddct" />
             </androidx.cardview.widget.CardView>
