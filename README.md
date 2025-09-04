@@ -1,12 +1,11 @@
 # Orient1 Capstone 2
 
-This project is part of the **Orient 1 Capstone** course requirement.  
-It is an Android application developed to provide interactive learning materials, quizzes, and AR-based features for students.  
+**Orient 1** is a Capstone Project focused on creating an Android application that provides interactive learning materials, quizzes, and AR-based features for students.  
 
 ---
 
 ## 📌 Features
-- Interactive lessons (Prelim to Finals)  
+- Interactive lessons  
 - Quiz module with scoring and review  
 - Augmented Reality (AR) campus exploration and hallway views  
 - Campus map with GPS-based navigation and AR support  
