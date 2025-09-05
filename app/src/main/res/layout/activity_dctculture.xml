@@ -242,45 +242,69 @@
                 android:textSize="16sp" />
 
             <!-- Sisters Section - made responsive -->
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dropdownCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:text="The Order of Preachers and the Sisters Who Headed the School"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:text="Religious Sisters who served as principals include:"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
-            <TextView
-                android:id="@+id/sistersTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                    <!-- Header with arrow + title -->
+                    <LinearLayout
+                        android:id="@+id/dropdownHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/dropdownArrow"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_arrow_drop_down"
+
+                        />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="The Order of Preachers and the Sisters Who Headed the School"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Collapsible content -->
+                    <LinearLayout
+                        android:id="@+id/dropdownContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="• Sr. Ma. Rosalina Mirabueno, O.P.\n• Sr. Ines Fider, O.P.\n• Sr. Irene Lapus, O.P.\n• Sr. Ma. Magdalena Olfato, O.P.\n• Sr. Catalina Saligumba, O.P.\n• Sr. Carmen Tiamzon, O.P.\n• Sr. Loreto Penuliar, O.P\n• Sr. Catherine Cachero, O.P.\n• Sr. Caridad Bayani, O.P.\n• Sr. Marisor Fabros, O.P\n• Sr. Ma. Alelee M. Masanque, O.P\n• Sr. Lorna Ablog O.P."
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
 
             <!-- Sister Image Card - made responsive -->
             <androidx.cardview.widget.CardView
@@ -327,127 +351,148 @@
                 android:textSize="16sp" />
 
             <!-- Philosophy Section - made responsive -->
-            <TextView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:text="The DCT Philosophy and the Logogram"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="#468288">
 
-            <TextView
-                android:id="@+id/descriptionText4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
-                android:id="@+id/philoed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center"
+                        android:text="The DCT Philosophy and the Logogram"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
-            <!-- Logo Section - made responsive -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:text="DCT LOGORAM"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/descriptionText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:justificationMode="inter_word"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/philoed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:justificationMode="inter_word"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_margin="16dp">
 
+                <!-- Logo centered -->
                 <ImageView
                     android:id="@+id/myImage"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="8dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/dctlogo" />
 
+                <!-- DCT LOGORAM text centered -->
+                <TextView
+                    android:id="@+id/logoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="DCT LOGORAM"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Script/Description left aligned -->
                 <TextView
                     android:id="@+id/myText"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:fontFamily="@font/poppins_light"
                     android:justificationMode="inter_word"
-                    android:text="The school logo, by itself, attests to the identity of the Dominican College of Tarlac – the character it manifests in the socio-cultural and psycho-spiritual awareness of the people invariably connected with it."
+                    android:text="The school logo, by itself, attests to the identity of the Dominican College of Tarlac – the character it manifests in the socio-cultural and psycho-spiritual awareness of the people invariably connected with it.The logo embodies this institution’s unwavering commitment to the holistic formation of the person as well as the person’s manifestation of a true educated man in the Dominican way"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="start"
+                    android:layout_marginTop="8dp" />
+
             </LinearLayout>
 
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="The logo emphasizes three virtues:"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardUseCompatPadding="true">
 
-            <TextView
-                android:id="@+id/valuesTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    app:cardBackgroundColor="#468288">
 
-            <TextView
-                android:id="@+id/descriptionText5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="FUN FACT: The logo emphasizes three virtues:"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/valuesTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:justificationMode="inter_word"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/descriptionText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:justificationMode="inter_word"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- Objectives Section - made responsive -->
             <TextView
@@ -464,75 +509,285 @@
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/outcomesTextView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:lineSpacingExtra="4dp"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- WISDOM -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:background="#355C7D">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="WISDOM"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="8dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Cognitive – to possess knowledge and skills for social communication."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Affective – to demonstrate sensitive awareness of one’s role in social building."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Psychomotor – to positively engage oneself in relevant social issues."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- SOCIAL RESPONSIBILITY -->
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:background="#3E6257">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="SOCIAL RESPONSIBILITY"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Cognitive – to inculcate awareness of Filipino Christian values."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Affective – to show appreciation of our Christian dignity as stewards of God’s creation."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Psychomotor – to promote moral commitment to ecological balance."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:background="#9C7B2F">
+
+                        <!-- CHRISTIAN WITNESSING -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CHRISTIAN WITNESSING"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Cognitive – to acquire understanding of scripture teachings."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Affective – to manifest love for the scripture."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="• Psychomotor – to practice scriptural truths in every aspect of life."
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
 
             <!-- Vision Section - made responsive -->
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="start"
-                android:text="Vision"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
 
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/descriptionText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                <!-- Vision Section -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="false"
+                    android:layout_marginBottom="0dp">
 
-            <!-- Mission Section - made responsive -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="start"
-                android:text="Mission"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="#468288">
 
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vision"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:id="@+id/descriptionText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_light"
-                android:justificationMode="inter_word"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/descriptionText6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:justificationMode="inter_word"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- Mission Section -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="false"
+                    android:layout_marginTop="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="#2C4C54">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mission"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/descriptionText7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:justificationMode="inter_word"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
