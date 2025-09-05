@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.Html;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -43,7 +45,11 @@ public class IOL3 extends AppCompatActivity {
     private RecyclerView infiniteCarousel1;
     private RecyclerView infiniteCarousel2;
 
-    // Sample data arrays (you can externalize these)
+    // Dropdown views
+    private LinearLayout[] dropdownContents;
+    private ImageView[] dropdownIcons;
+
+    // Sample data arrays
     private final String[] titles = {
             "1. Keep studies as your first priority",
             "2. Set SMART Goals",
@@ -63,7 +69,7 @@ public class IOL3 extends AppCompatActivity {
     };
 
     private final int[] imageRes = {
-            R.drawable.image17, // substitute with real icons
+            R.drawable.image17,
             R.drawable.image18,
             R.drawable.image19,
             R.drawable.image20,
@@ -81,8 +87,29 @@ public class IOL3 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_iol3);
 
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        // Initialize dropdown arrays
+        dropdownContents = new LinearLayout[]{
+                findViewById(R.id.dropdownContent1),
+                findViewById(R.id.dropdownContent2),
+                findViewById(R.id.dropdownContent3),
+                findViewById(R.id.dropdownContent4),
+                findViewById(R.id.dropdownContent5),
+                findViewById(R.id.dropdownContent6)
+        };
+
+        dropdownIcons = new ImageView[]{
+                findViewById(R.id.dropdownIcon1),
+                findViewById(R.id.dropdownIcon2),
+                findViewById(R.id.dropdownIcon3),
+                findViewById(R.id.dropdownIcon4),
+                findViewById(R.id.dropdownIcon5),
+                findViewById(R.id.dropdownIcon6)
+        };
+
+        // Setup dropdown toggles
+        setupDropdownToggles();
 
         RecyclerView recycler1 = findViewById(R.id.recyclerView);
         recycler1.setLayoutManager(new LinearLayoutManager(this));
@@ -95,11 +122,8 @@ public class IOL3 extends AppCompatActivity {
         InfoAdapter adapter1 = new InfoAdapter(items);
         recycler1.setAdapter(adapter1);
 
-
         TextView descriptionText7 = findViewById(R.id.description4);
-
-
-        String html8 = "<b>Student life</b>in school helps them start learning about everything. They learn academic knowledge, manners, good behaviors, discipline, punctuality, and more" ;
+        String html8 = "<b>Student life</b> in school helps them start learning about everything. They learn academic knowledge, manners, good behaviors, discipline, punctuality, and more";
         descriptionText7.setText(Html.fromHtml(html8, Html.FROM_HTML_MODE_LEGACY));
 
         List<Integer> myDataList = Arrays.asList(
@@ -121,13 +145,36 @@ public class IOL3 extends AppCompatActivity {
         snapHelper.attachToRecyclerView(recycler);
         recycler.setOverScrollMode(View.OVER_SCROLL_NEVER);
 
-
         setupWindowInsets();
         setupNavigationButtons();
         setupFirstCarousel();
         setupSecondCarousel();
         setupInfiniteCarousels();
         setupSecondCarousel1();
+    }
+
+    private void setupDropdownToggles() {
+        for (int i = 0; i < dropdownContents.length; i++) {
+            final int index = i;
+            View parentCard = (View) dropdownContents[i].getParent().getParent();
+
+            parentCard.setOnClickListener(v -> toggleDropdown(index));
+
+            // Also make the icon clickable
+            dropdownIcons[i].setOnClickListener(v -> toggleDropdown(index));
+        }
+    }
+
+    private void toggleDropdown(int index) {
+        boolean isVisible = dropdownContents[index].getVisibility() == View.VISIBLE;
+
+        if (isVisible) {
+            dropdownContents[index].setVisibility(View.GONE);
+            dropdownIcons[index].setRotation(0);
+        } else {
+            dropdownContents[index].setVisibility(View.VISIBLE);
+            dropdownIcons[index].setRotation(180);
+        }
     }
 
     private void setupWindowInsets() {
@@ -177,13 +224,14 @@ public class IOL3 extends AppCompatActivity {
                 images.size()
         );
     }
+
     private void setupSecondCarousel1() {
         List<Integer> images = Arrays.asList(
                 R.drawable.image28, R.drawable.image29, R.drawable.image30,
                 R.drawable.image31, R.drawable.image32, R.drawable.image33, R.drawable.image34, R.drawable.image35,
                 R.drawable.image36, R.drawable.image37
         );
-        List<String> texts = Arrays.asList("Health Issues", "Academic Pressure", "Mental Health Issues", "Lack of Resources", "Financial Constraints", "Lack of Motivation", "Social Issues","Time Management","Technological Barriers",". Family Problems");
+        List<String> texts = Arrays.asList("Health Issues", "Academic Pressure", "Mental Health Issues", "Lack of Resources", "Financial Constraints", "Lack of Motivation", "Social Issues", "Time Management", "Technological Barriers", "Family Problems");
 
         setupCarousel(
                 R.id.carouselRecyclerView2,
@@ -191,7 +239,6 @@ public class IOL3 extends AppCompatActivity {
                 images.size()
         );
     }
-
 
     private void setupCarousel(int recyclerViewId, CarouselAdapter adapter, int itemCount) {
         RecyclerView carouselRecyclerView = findViewById(recyclerViewId);
@@ -292,7 +339,11 @@ public class IOL3 extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         // Stop auto-scroll to avoid leaks
-        autoScrollHandler.removeCallbacks(autoScrollRunnable1);
-        autoScrollHandler.removeCallbacks(autoScrollRunnable2);
+        if (autoScrollRunnable1 != null) {
+            autoScrollHandler.removeCallbacks(autoScrollRunnable1);
+        }
+        if (autoScrollRunnable2 != null) {
+            autoScrollHandler.removeCallbacks(autoScrollRunnable2);
+        }
     }
 }
