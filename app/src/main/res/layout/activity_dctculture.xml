@@ -253,6 +253,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#F9E6AC"
                     android:orientation="vertical"
                     android:padding="12dp">
 
@@ -261,8 +262,9 @@
                         android:id="@+id/dropdownHeader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:background="#F9E6AC"
                         android:gravity="center_vertical"
+                        android:orientation="horizontal"
                         android:padding="8dp">
 
                         <ImageView
@@ -271,16 +273,16 @@
                             android:layout_height="24dp"
                             android:src="@drawable/ic_arrow_drop_down"
 
-                        />
+                            />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="The Order of Preachers and the Sisters Who Headed the School"
+                            android:textColor="@color/black"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black" />
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <!-- Collapsible content -->
@@ -289,16 +291,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingTop="8dp">
+                        android:paddingTop="8dp"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="• Sr. Ma. Rosalina Mirabueno, O.P.\n• Sr. Ines Fider, O.P.\n• Sr. Irene Lapus, O.P.\n• Sr. Ma. Magdalena Olfato, O.P.\n• Sr. Catalina Saligumba, O.P.\n• Sr. Carmen Tiamzon, O.P.\n• Sr. Loreto Penuliar, O.P\n• Sr. Catherine Cachero, O.P.\n• Sr. Caridad Bayani, O.P.\n• Sr. Marisor Fabros, O.P\n• Sr. Ma. Alelee M. Masanque, O.P\n• Sr. Lorna Ablog O.P."
-                            android:textSize="16sp"
-                            android:textColor="@color/black"/>
-
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
 
                     </LinearLayout>
@@ -355,10 +356,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                app:cardBackgroundColor="#468288"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="#468288">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -405,9 +406,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_margin="16dp"
                 android:gravity="center_horizontal"
-                android:layout_margin="16dp">
+                android:orientation="vertical">
 
                 <!-- Logo centered -->
                 <ImageView
@@ -423,27 +424,27 @@
                     android:id="@+id/logoTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:text="DCT LOGORAM"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
+                    android:textStyle="bold" />
 
                 <!-- Script/Description left aligned -->
                 <TextView
                     android:id="@+id/myText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/poppins_light"
+                    android:gravity="start"
                     android:justificationMode="inter_word"
                     android:text="The school logo, by itself, attests to the identity of the Dominican College of Tarlac – the character it manifests in the socio-cultural and psycho-spiritual awareness of the people invariably connected with it.The logo embodies this institution’s unwavering commitment to the holistic formation of the person as well as the person’s manifestation of a true educated man in the Dominican way"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:gravity="start"
-                    android:layout_marginTop="8dp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -451,9 +452,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                app:cardBackgroundColor="@android:color/transparent"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="8dp"
-                app:cardBackgroundColor="@android:color/transparent"
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -512,11 +513,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
 
                 <!-- WISDOM -->
 
@@ -524,54 +525,55 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp"
-                    app:cardUseCompatPadding="true"
-                    android:layout_marginBottom="16dp">
+                    app:cardUseCompatPadding="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#355C7D"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="#355C7D">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="WISDOM"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/poppins_bold"
+                            android:text="WISDOM"
                             android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:layout_marginBottom="8dp"/>
+                            android:textSize="18sp" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Cognitive – to possess knowledge and skills for social communication."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Affective – to demonstrate sensitive awareness of one’s role in social building."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="• Psychomotor – to positively engage oneself in relevant social issues."
                             android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
+                            android:text="• Psychomotor – to positively engage oneself in relevant social issues."
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"/>
+                            android:textSize="16sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -582,59 +584,58 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp"
-                    app:cardUseCompatPadding="true"
-                    android:layout_marginBottom="16dp">
+                    app:cardUseCompatPadding="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#3E6257"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="#3E6257">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="SOCIAL RESPONSIBILITY"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/poppins_bold"
+                            android:text="SOCIAL RESPONSIBILITY"
                             android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:layout_marginBottom="8dp"/>
+                            android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Cognitive – to inculcate awareness of Filipino Christian values."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Affective – to show appreciation of our Christian dignity as stewards of God’s creation."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="• Psychomotor – to promote moral commitment to ecological balance."
                             android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
+                            android:text="• Psychomotor – to promote moral commitment to ecological balance."
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"/>
+                            android:textSize="16sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
 
                 <androidx.cardview.widget.CardView
@@ -647,48 +648,48 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#9C7B2F"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="#9C7B2F">
+                        android:padding="12dp">
 
                         <!-- CHRISTIAN WITNESSING -->
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="CHRISTIAN WITNESSING"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/poppins_bold"
+                            android:text="CHRISTIAN WITNESSING"
                             android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:layout_marginBottom="8dp"/>
+                            android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Cognitive – to acquire understanding of scripture teachings."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
                             android:text="• Affective – to manifest love for the scripture."
-                            android:fontFamily="@font/poppins_light"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="• Psychomotor – to practice scriptural truths in every aspect of life."
                             android:fontFamily="@font/poppins_light"
+                            android:lineSpacingExtra="4dp"
+                            android:text="• Psychomotor – to practice scriptural truths in every aspect of life."
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:lineSpacingExtra="4dp"/>
+                            android:textSize="16sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -700,39 +701,40 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
 
 
                 <!-- Vision Section -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp"
-                    app:cardUseCompatPadding="false"
-                    android:layout_marginBottom="0dp">
+                    app:cardUseCompatPadding="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#2C4C54"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="#468288">
+
+                        android:padding="16dp">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Vision"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/poppins_bold"
+                            android:gravity="start"
+                            android:text="Vision"
                             android:textColor="@color/white"
                             android:textSize="22sp"
-                            android:textStyle="bold"
-                            android:gravity="start"
-                            android:layout_marginBottom="8dp"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/descriptionText6"
@@ -741,7 +743,7 @@
                             android:fontFamily="@font/poppins_light"
                             android:justificationMode="inter_word"
                             android:textColor="@color/white"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -751,28 +753,28 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp"
-                    app:cardUseCompatPadding="false"
-                    android:layout_marginTop="0dp">
+                    app:cardUseCompatPadding="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#3E666A"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="#2C4C54">
+                        android:padding="16dp">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Mission"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="@font/poppins_bold"
+                            android:gravity="start"
+                            android:text="Mission"
                             android:textColor="@color/white"
                             android:textSize="22sp"
-                            android:textStyle="bold"
-                            android:gravity="start"
-                            android:layout_marginBottom="8dp"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/descriptionText7"
@@ -781,7 +783,7 @@
                             android:fontFamily="@font/poppins_light"
                             android:justificationMode="inter_word"
                             android:textColor="@color/white"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
