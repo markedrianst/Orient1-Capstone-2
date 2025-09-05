@@ -1,78 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#468288"
     android:fitsSystemWindows="true"
-    android:layout_gravity="center"
     tools:context=".SnP">
 
-    <!-- Header - made responsive -->
-    <!-- Header - made responsive -->
+    <!-- HEADER -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rectangleContainer"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_margin="16dp"
         android:background="@drawable/rounded_header"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/circular_button"
+            android:contentDescription="@string/back"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/circular_button"
-                android:contentDescription="@string/back"
-                android:src="@drawable/back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circular_button"
+            android:contentDescription="@string/home"
+            android:src="@drawable/home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btnHome"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/circular_button"
-                android:contentDescription="@string/home"
-                android:src="@drawable/home"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/lessonsText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_italic"
-                android:text="II - Study and Prayer Life"
-                android:textColor="#468288"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnHome"
-                app:layout_constraintStart_toEndOf="@id/backButton"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lessonsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_italic"
+            android:gravity="center"
+            android:text="II - Study and Prayer Life"
+            android:textColor="#468288"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnHome"
+            app:layout_constraintStart_toEndOf="@id/backButton"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Content Section -->
+    <!-- MAIN SCROLL (single scroll container) -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollContent"
         android:layout_width="0dp"
@@ -87,144 +73,136 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
-            android:paddingBottom="24dp">
+            android:padding="16dp">
 
-            <!-- First Image Card -->
+            <!-- Horizontal RecyclerView (program cards) -->
+
+
+            <!-- Hero Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
                 app:cardBackgroundColor="#468288"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
                 app:cardPreventCornerOverlap="false">
-
-            <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/saintdom" />
-            </androidx.cardview.widget.CardView>
-
-            <!-- First Description -->
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_italic"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:lineSpacingExtra="4sp"
-                android:padding="8dp" />
-
-            <!-- Second Image Card -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="#468288"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/lastcom" />
+                    android:src="@drawable/saintdom" />
+
             </androidx.cardview.widget.CardView>
 
-            <!-- Second Description -->
+            <!-- Description texts used by Activity -->
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_italic"
+                android:lineSpacingExtra="4sp"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/descriptionText1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="6dp"
                 android:fontFamily="@font/poppins_italic"
-                android:gravity="center"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:gravity="start"
                 android:lineSpacingExtra="4sp"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
+            <!-- small list area (where Java sets bullet list) -->
             <TextView
+                android:id="@+id/myTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppins_light"
+                android:padding="8dp"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp" />
+                android:textSize="16sp" />
 
+            <!-- Second image card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#468288"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lastcom" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bishop flip card (front/back) -->
             <FrameLayout
                 android:id="@+id/flip_container"
                 android:layout_width="290dp"
                 android:layout_height="290dp"
-                android:padding="10dp"
                 android:layout_gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
+                android:layout_marginTop="12dp"
+                android:padding="10dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_front"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="#35616E"
                     android:layout_margin="10dp"
+                    app:cardBackgroundColor="#35616E"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="50dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/bishopsison" />
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/poppins_italic"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Bishop Jesus J. Sison"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14dp"
-                        tools:ignore="TextSizeCheck" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bishopsison" />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_italic"
+                            android:gravity="start"
+                            android:padding="8dp"
+                            android:text="Bishop Jesus J. Sison"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
 
-
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_back"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="10dp"
                     android:visibility="invisible"
                     app:cardBackgroundColor="#35616E"
-                    android:layout_margin="10dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="8dp">
 
@@ -235,408 +213,521 @@
                         android:gravity="center"
                         android:padding="14dp"
                         android:textColor="#FFFFFF"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
-            <!-- Tertiary Education Heading -->
+            <!-- SCROLL VERTICAL PICS (kept compact) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="12dp"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:text="Tertiary Education"
+                android:gravity="start"
+                android:paddingTop="20dp"
+                android:text="DCT has been given accreditation by TESDA by 2005-2006( Restaurant Management, Practical Nursing and Contact Center Training)"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:padding="8dp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <!-- 1980 Section -->
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:text="DCT PROGRAMS "
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+            <!-- TIMELINE (kept compact) -->
+            <LinearLayout
+                android:id="@+id/timelineLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="#35616E"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+                <!-- ITEM 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    tools:ignore="MissingConstraints">
+                    android:orientation="horizontal">
 
-                    <LinearLayout
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:text="1980"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="#FFFFFF" />
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:layout_weight="1"
+                        app:cardBackgroundColor="#35616E"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/tertiary" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:text="Tertiary Education(AI-Genereted)"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bachelor of Arts courses and Computer Secretarial were first offered."
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- ITEM 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:paddingTop="20dp"
+                        android:text="1985"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="#FFFFFF" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#35616E"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/compsec1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:text="Bachelor of Arts  Computer Secretarial"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bachelor of Arts courses and Computer Secretarial were first offered."
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- ITEM 2 (kept) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:text="1997"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="#FFFFFF" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#35616E"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/elemeduc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:text="Bachelor of Elementary Education"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bachelor of Elementary Education program was introduced."
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!-- ITEM 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="20dp"
+                        android:text="2005\n2006"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="#FFFFFF" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#35616E"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/dct" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:text="TESDA Accreditation"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DCT was given accreditation by TESDA during 2005–2006."
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:text="2009"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#FFFFFF" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#35616E"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:adjustViewBounds="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/ai" />
+                            android:src="@drawable/bsit" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="(AI Generated)"
+                            android:paddingTop="8dp"
+                            android:text="Bachelor of Science in Information Technology"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2009 marked the introduction of the Bachelor of Science in Information Technology program."
                             android:textColor="#FFFFFF"
                             android:textSize="14sp" />
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <!-- ITEM 2 (kept) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="0dp"
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:text="2011"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#FFFFFF" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#35616E"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/poppins_italic"
-                        android:gravity="center_vertical"
-                        android:text="1980"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:padding="8dp" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-            <!-- 1985 Section -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="#35616E"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bsba" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_italic"
-                    android:gravity="center"
-                    android:text="1985"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:padding="16dp"
-                    tools:ignore="MissingConstraints" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Bachelor of Science in Business and Accountancy"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="The Bachelor of Science in Business Administration program became available in 2011."
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:text="2015"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#FFFFFF" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#468288"
+                    app:cardBackgroundColor="#35616E"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/compsec1" />
-                </androidx.cardview.widget.CardView>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-                <androidx.cardview.widget.CardView
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bscrim" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Bachelor of Science in Criminology"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In 2015, the institution expanded its academic programs with the addition of the Bachelor of Science in Criminal Justice Education."
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <!-- DROPDOWNS: Blessing & Hymn -->
+            <LinearLayout
+                android:id="@+id/blessingHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/blessingTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#468288"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/comspsec2" />
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-            <!-- Third Description -->
-            <TextView
-                android:id="@+id/description4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardElevation="6dp"
-                android:layout_gravity="center">
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="DOMINICAN BLESSING"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/elemeduc" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:text="Bachelor of Elementary Education \nwas offered in"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-            <TextView
-                android:text="1997"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="5dp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-
-            <TextView
-                android:id="@+id/descriptionText3"
-                android:text="1997"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="16dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:clipToPadding="false"
-                android:paddingHorizontal="8dp" />
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardElevation="6dp"
-                android:layout_gravity="center">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/infotech" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/descriptionText5"
-                android:text="2009 marked the introduction of the Bachelor of Science in Information Technology program."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardElevation="6dp"
-                android:layout_gravity="center">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bsba" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/descriptionText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardElevation="6dp"
-                android:layout_gravity="center">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bscrim" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/descriptionText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginEnd="16dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnBlessingToggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardElevation="6dp"
-                    android:layout_gravity="center">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/philed" />
-                </androidx.cardview.widget.CardView>
+                    android:src="@android:drawable/arrow_down_float"
+                    app:tint="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blessingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center"
-                    android:padding="14dp"
-                    android:text="Philosophy and Education"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="6dp"
-                android:layout_gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/dct" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/descriptionText8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:textColor="#FFFFFF"
-                android:padding="16dp"/>
-
-            <TextView
-                android:id="@+id/descriptionText9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginEnd="16dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardElevation="6dp"
-                    android:layout_gravity="center">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dblessing" />
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:gravity="center"
-                    android:padding="14dp"
-                    android:text="Dominican Blessing"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="14dp"
-                android:text="May god the Father bless us, \nMay god the Son heal us,\n
+                    android:text="May god the Father bless us, \nMay god the Son heal us,\n
 May god the Holy Spirit enlighten us,\n
 and give us eyes to see with\n
 ears to hear with\n
@@ -646,79 +737,82 @@ a mouth to preach the word of salvation with\n
 and may the angel of peace watch over us\n
 and lead us at last\n
 by the Lord’s gift to the kingdom.\n
-Amen. "
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+Amen.       &#10;      &#10;      &#10;"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/hymnHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center"
-                android:padding="14dp"
-                android:text="DCT HYMN"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:padding="8dp"
+                    android:text="DCT HYMN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/btnHymnToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/arrow_down_float"
+                    app:tint="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hymnContainer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
 
                 <FrameLayout
                     android:id="@+id/videoFrame"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5">
+                    android:layout_margin="8dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        app:cardElevation="6dp"
-                        android:layout_gravity="center">
+                    <ImageView
+                        android:id="@+id/myImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/philed" />
 
-                        <ImageView
-                            android:id="@+id/myImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/philed"
-                            android:scaleType="centerCrop" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins_italic"
+                        android:gravity="center"
+                        android:text="(tap image to play video)"
+                        android:textColor="#B80000" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/poppins_italic"
-                            android:gravity="center"
-                            android:padding="14dp"
-                            android:text="(tap image to play video)"
-                            android:textColor="#B80000"
-                            android:textSize="16dp" />
-
-                        <VideoView
-                            android:id="@+id/myVideo"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:visibility="gone" />
-
-                    </androidx.cardview.widget.CardView>
-
+                    <VideoView
+                        android:id="@+id/myVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
                 </FrameLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:padding="14dp"
-                android:text="Called and chosen to take the path&#10;
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Called and chosen to take the path&#10;
 Where You lead us to reach the heights&#10;
 Knowledge, wisdom, and passion for the truth&#10;
 Molding us to greatness&#10;&#10;
@@ -733,11 +827,15 @@ To Your family&#10;&#10;
 We now raise our voices&#10;
 One in our desire&#10;
 To be loyal, to be true&#10;
-To Your great name"
-                android:textIsSelectable="true"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
+To Your great name&#10;
+      &#10;
+      &#10;
+      &#10;
+      &#10;
+      &#10;"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
