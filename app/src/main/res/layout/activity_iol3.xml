@@ -17,7 +17,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="#F9E6AC"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -162,10 +162,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/carouselRecyclerView"
@@ -210,7 +210,6 @@
                 app:cardElevation="2dp">
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -235,8 +234,7 @@
                             android:id="@+id/dropdownIcon2"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@android:drawable/arrow_down_float">
-                        </ImageView>
+                            android:src="@android:drawable/arrow_down_float"></ImageView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -244,8 +242,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
@@ -486,8 +484,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -503,8 +501,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/poppins_light"
                             android:gravity="center"
@@ -545,8 +543,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/poppins_bold"
                             android:gravity="center"
@@ -558,8 +556,8 @@
                             android:id="@+id/carouselRecycler"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
-                            android:layout_marginTop="8dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:overScrollMode="never" />
                     </LinearLayout>
@@ -610,8 +608,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
@@ -650,8 +648,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/poppins_bold"
                             android:gravity="center"
@@ -662,8 +660,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/poppins_light"
                             android:gravity="center"
@@ -676,12 +674,12 @@
                             android:id="@+id/recyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:clipToPadding="false"
-                            android:paddingBottom="16dp"
-                            android:paddingTop="16dp" />
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -730,15 +728,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/carouselRecyclerView2"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
-                            android:layout_marginTop="8dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:clipToPadding="false"
                             android:overScrollMode="always" />
@@ -790,8 +788,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="16dp">
+                        android:paddingBottom="16dp"
+                        android:visibility="gone">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
@@ -893,8 +891,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/poppins_light"
                             android:gravity="center"
