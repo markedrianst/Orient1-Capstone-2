@@ -67,7 +67,7 @@ public class dctlayout extends AppCompatActivity {
 
         setupButton(R.id.btn_our_lady_fatima,
                 "Our Lady of Fatima Building",
-                R.drawable.olp,
+                R.drawable.olf,
                 getString(R.string.our_lady_fatima_description));
 
         setupButton(R.id.btn_st_catherine,
