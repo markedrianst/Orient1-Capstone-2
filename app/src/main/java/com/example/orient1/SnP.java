@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -25,9 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SnP extends AppCompatActivity {
+    private final Handler autoScrollHandler = new Handler();
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
-    private Handler autoScrollHandler = new Handler();
     private CardView cardFront, cardBack;
     private boolean isFront = true;
 
@@ -78,11 +77,19 @@ public class SnP extends AppCompatActivity {
             Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.dcthymn);
             myVideo.setVideoURI(videoUri);
 
-            MediaController mediaController = new MediaController(this);
-            mediaController.setAnchorView(myVideo);
-            myVideo.setMediaController(mediaController);
-            myVideo.start();
+            // Start video automatically when ready
+            myVideo.setOnPreparedListener(mp -> myVideo.start());
         });
+
+// Tap video to play/pause
+        myVideo.setOnClickListener(v -> {
+            if (myVideo.isPlaying()) {
+                myVideo.pause();
+            } else {
+                myVideo.start();
+            }
+        });
+
 
         // Dropdowns for Blessing & Hymn
         View blessingHeader = findViewById(R.id.blessingHeader);
