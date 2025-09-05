@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -38,6 +39,15 @@ public class EAL4 extends AppCompatActivity {
     private int itemCount;
     private float centerX;
 
+    // Expandable section variables
+    private boolean isFormalEducationExpanded = false;
+    private boolean isInformalEducationExpanded = false;
+    private boolean isNonFormalEducationExpanded = false;
+    private boolean isAccessInclusionExpanded = false;
+    private boolean isTeachingMethodsExpanded = false;
+    private boolean isCurriculumContentExpanded = false;
+    private boolean isTechnologyRoleExpanded = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +58,7 @@ public class EAL4 extends AppCompatActivity {
         setupTextViews();
         setupCarousel();
         setupCarousel1();
+        setupExpandableSections(); // Add this line
     }
 
     private void setupButtons() {
@@ -63,6 +74,110 @@ public class EAL4 extends AppCompatActivity {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
+    }
+
+    private void setupExpandableSections() {
+        // Formal Education
+        View formalEducationArrow = findViewById(R.id.formalEducationArrow);
+        View formalEducationHeader = (View) formalEducationArrow.getParent().getParent();
+        formalEducationHeader.setOnClickListener(v -> {
+            isFormalEducationExpanded = !isFormalEducationExpanded;
+            toggleSection(
+                    R.id.formalEducationContent,
+                    R.id.formalEducationArrow,
+                    isFormalEducationExpanded
+            );
+        });
+
+        // Informal Education
+        View informalEducationArrow = findViewById(R.id.informalEducationArrow);
+        View informalEducationHeader = (View) informalEducationArrow.getParent().getParent();
+        informalEducationHeader.setOnClickListener(v -> {
+            isInformalEducationExpanded = !isInformalEducationExpanded;
+            toggleSection(
+                    R.id.informalEducationContent,
+                    R.id.informalEducationArrow,
+                    isInformalEducationExpanded
+            );
+        });
+
+        // Non-formal Education
+        View nonFormalEducationArrow = findViewById(R.id.nonFormalEducationArrow);
+        View nonFormalEducationHeader = (View) nonFormalEducationArrow.getParent().getParent();
+        nonFormalEducationHeader.setOnClickListener(v -> {
+            isNonFormalEducationExpanded = !isNonFormalEducationExpanded;
+            toggleSection(
+                    R.id.nonFormalEducationContent,
+                    R.id.nonFormalEducationArrow,
+                    isNonFormalEducationExpanded
+            );
+        });
+
+        // Evolution of Education sections
+        setupEvolutionSections();
+    }
+
+    private void setupEvolutionSections() {
+        // Access and Inclusion
+        View accessInclusionArrow = findViewById(R.id.accessInclusionArrow);
+        View accessInclusionHeader = (View) accessInclusionArrow.getParent();
+        accessInclusionHeader.setOnClickListener(v -> {
+            isAccessInclusionExpanded = !isAccessInclusionExpanded;
+            toggleSection(
+                    R.id.accessInclusionContent,
+                    R.id.accessInclusionArrow,
+                    isAccessInclusionExpanded
+            );
+        });
+
+        // Teaching Methods
+        View teachingMethodsArrow = findViewById(R.id.teachingMethodsArrow);
+        View teachingMethodsHeader = (View) teachingMethodsArrow.getParent();
+        teachingMethodsHeader.setOnClickListener(v -> {
+            isTeachingMethodsExpanded = !isTeachingMethodsExpanded;
+            toggleSection(
+                    R.id.teachingMethodsContent,
+                    R.id.teachingMethodsArrow,
+                    isTeachingMethodsExpanded
+            );
+        });
+
+        // Curriculum Content
+        View curriculumContentArrow = findViewById(R.id.curriculumContentArrow);
+        View curriculumContentHeader = (View) curriculumContentArrow.getParent();
+        curriculumContentHeader.setOnClickListener(v -> {
+            isCurriculumContentExpanded = !isCurriculumContentExpanded;
+            toggleSection(
+                    R.id.curriculumContentContent,
+                    R.id.curriculumContentArrow,
+                    isCurriculumContentExpanded
+            );
+        });
+
+        // Role of Technology
+        View technologyRoleArrow = findViewById(R.id.technologyRoleArrow);
+        View technologyRoleHeader = (View) technologyRoleArrow.getParent();
+        technologyRoleHeader.setOnClickListener(v -> {
+            isTechnologyRoleExpanded = !isTechnologyRoleExpanded;
+            toggleSection(
+                    R.id.technologyRoleContent,
+                    R.id.technologyRoleArrow,
+                    isTechnologyRoleExpanded
+            );
+        });
+    }
+
+    private void toggleSection(int contentId, int arrowId, boolean isExpanded) {
+        View content = findViewById(contentId);
+        ImageView arrow = findViewById(arrowId);
+
+        if (isExpanded) {
+            content.setVisibility(View.VISIBLE);
+            arrow.setRotation(180);
+        } else {
+            content.setVisibility(View.GONE);
+            arrow.setRotation(0);
+        }
     }
 
     private void setupTextViews() {
