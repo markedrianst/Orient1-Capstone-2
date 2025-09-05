@@ -3,37 +3,24 @@ package com.example.orient1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.style.BulletSpan;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Dctculture extends AppCompatActivity {
-    // Fix: Declare builder5 at class level
-    private SpannableStringBuilder builder5 = new SpannableStringBuilder();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dctculture);
-
-        String[] sisters = {
-                "Sr. Ma. Rosalina Mirabueno, O.P.",
-                "Sr. Ines Fider, O.P.",
-                "Sr. Irene Lapus, O.P.",
-                "Sr. Ma. Magdalena Olfato, O.P.",
-                "Sr. Catalina Saligumba, O.P.",
-                "Sr. Carmen Tiamzon, O.P.",
-                "Sr. Loreto Penuliar, O.P.",
-                "Sr. Catherine Cachero, O.P.",
-                "Sr. Caridad Bayani, O.P.",
-                "Sr. Marisor Fabros, O.P.",
-                "Sr. Ma. Alelee M. Masanque, O.P."
-        };
 
         String[] philosophy = {
                 "Union with God",
@@ -47,34 +34,12 @@ public class Dctculture extends AppCompatActivity {
                 "SAPIENTIA – “Wisdom”"
         };
 
-
-        appendSection(
-                "WISDOM",
-                "to possess knowledge and skills for social communication.",
-                "to demonstrate sensitive awareness of one’s role in social building.",
-                "to positively engage oneself in relevant social issues."
-        );
-
-        appendSection(
-                "SOCIAL RESPONSIBILITY",
-                "to inculcate awareness of Filipino Christian values.",
-                "to show appreciation of our Christian dignity as stewards of God’s creation.",
-                "to promote moral commitment to ecological balance."
-        );
-
-        appendSection(
-                "CHRISTIAN WITNESSING",
-                "to acquire understanding of scripture teachings.",
-                "to manifest love for the scripture.",
-                "to practice scriptural truths in every aspect of life."
-        );
-
-
+        // Descriptions
         TextView description = findViewById(R.id.descriptionText);
         String htmlText = "&emsp;&emsp;Founded on February 14, 1947 by Fr. Mariano M. Sablay. " +
                 "It started with 35 students. <b>Fr. Mariano M. Sablay</b> was the Parish Priest of " +
                 "San Nicolas de Tolentino of Capas, Tarlac in 1946.";
-                description.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY));
+        description.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY));
 
         TextView description1 = findViewById(R.id.descriptionText1);
         String htmlText1 = "&emsp;&emsp;In 1960, the Dominican Sisters assumed administration of the school with Sr. Rosalina Mirabueno, " +
@@ -88,7 +53,7 @@ public class Dctculture extends AppCompatActivity {
         description2.setText(Html.fromHtml(htmlText2, Html.FROM_HTML_MODE_LEGACY));
 
         TextView description3 = findViewById(R.id.descriptionText3);
-        String htmlText3 = "1.Emphasizes the total integral formation of the human person.<br><br>"+
+        String htmlText3 = "1.Emphasizes the total integral formation of the human person.<br><br>" +
                 "2.Aims for union with God, community with others, and harmony with creation.";
         description3.setText(Html.fromHtml(htmlText3, Html.FROM_HTML_MODE_LEGACY));
 
@@ -97,7 +62,7 @@ public class Dctculture extends AppCompatActivity {
         description4.setText(Html.fromHtml(htmlText4, Html.FROM_HTML_MODE_LEGACY));
 
         TextView description5 = findViewById(R.id.descriptionText5);
-        String htmlText5 = "&emsp;&emsp;The logo embodies this institution’s unwavering commitment to the holistic formation of the person as well as the person’s manifestation of a true educated man in the Dominican way";
+        String htmlText5 = "";
         description5.setText(Html.fromHtml(htmlText5, Html.FROM_HTML_MODE_LEGACY));
 
         TextView description6 = findViewById(R.id.descriptionText6);
@@ -108,27 +73,15 @@ public class Dctculture extends AppCompatActivity {
         String htmlText7 = "&emsp;&emsp;We commit ourselves to the total formation of the person, promotion of truth and transformation of values for the service of humanity.";
         description7.setText(Html.fromHtml(htmlText7, Html.FROM_HTML_MODE_LEGACY));
 
-
-
-        TextView sistersTextView = findViewById(R.id.sistersTextView);
-        SpannableStringBuilder builder = new SpannableStringBuilder();
-        for (String name : sisters) {
-            SpannableString bullet = new SpannableString(name + "\n");
-            bullet.setSpan(new BulletSpan(20), 0, bullet.length(), 0);
-            builder.append(bullet);
-        }
-        sistersTextView.setText(builder);
-
-        // Philosophy list
+        // Philosophy bullets
         TextView philoTextView = findViewById(R.id.philoed);
-        SpannableStringBuilder philoBuilder = new SpannableStringBuilder();
+        StringBuilder philoBuilder = new StringBuilder();
         for (String item : philosophy) {
-            SpannableString bullet = new SpannableString(item + "\n");
-            bullet.setSpan(new BulletSpan(20), 0, bullet.length(), 0);
-            philoBuilder.append(bullet);
+            philoBuilder.append("• ").append(item).append("\n");
         }
-        philoTextView.setText(philoBuilder);
+        philoTextView.setText(philoBuilder.toString());
 
+        // Values list
         TextView valuesTextView = findViewById(R.id.valuesTextView);
         StringBuilder valuesBuilder = new StringBuilder();
         for (int i = 0; i < values.length; i++) {
@@ -136,23 +89,31 @@ public class Dctculture extends AppCompatActivity {
         }
         valuesTextView.setText(valuesBuilder.toString());
 
+        // Dropdown toggle (sisters section)
+        LinearLayout dropdownContent = findViewById(R.id.dropdownContent);
+        LinearLayout dropdownHeader = findViewById(R.id.dropdownHeader);
+        ImageView dropdownArrow = findViewById(R.id.dropdownArrow);
 
-        // Set text to outcomesView
-        TextView outcomesView = findViewById(R.id.outcomesTextView);
-        outcomesView.setText(builder5);
+        dropdownHeader.setOnClickListener(v -> {
+            if (dropdownContent.getVisibility() == View.VISIBLE) {
+                collapse(dropdownContent);
+                dropdownArrow.animate().rotation(0).start(); // arrow down
+            } else {
+                expand(dropdownContent);
+                dropdownArrow.animate().rotation(180).start(); // arrow up
+            }
+        });
 
-
-        // Home button - go to MainActivity with animation
+        // Home button
         ImageButton homeButton = findViewById(R.id.btnHome);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(Dctculture.this, MainActivity.class);
             startActivity(intent);
             finish();
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
         });
 
-        // Back button - go back with reverse animation
+        // Back button
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             finish();
@@ -160,23 +121,52 @@ public class Dctculture extends AppCompatActivity {
         });
     }
 
-    private void appendSection(String title, String cognitive, String affective, String psychomotor) {
-        int titleStart = builder5.length();
-        builder5.append(title).append("\n");
-        builder5.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
-                titleStart, builder5.length(), 0);
+    // Smooth expand animation
+    private void expand(View v) {
+        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        final int targetHeight = v.getMeasuredHeight();
 
-        appendBoldLabel("Cognitive – ", cognitive);
-        appendBoldLabel("Affective – ", affective);
-        appendBoldLabel("Psychomotor – ", psychomotor);
-        builder5.append("\n");
+        v.getLayoutParams().height = 0;
+        v.setVisibility(View.VISIBLE);
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                v.getLayoutParams().height = interpolatedTime == 1
+                        ? LinearLayout.LayoutParams.WRAP_CONTENT
+                        : (int) (targetHeight * interpolatedTime);
+                v.requestLayout();
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+        a.setDuration((int) (targetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        v.startAnimation(a);
     }
 
-    private void appendBoldLabel(String label, String content) {
-        int start = builder5.length();
-        builder5.append(label);
-        builder5.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
-                start, start + label.length(), 0);
-        builder5.append(content).append("\n");
+    // Smooth collapse animation
+    private void collapse(View v) {
+        final int initialHeight = v.getMeasuredHeight();
+
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                if (interpolatedTime == 1) {
+                    v.setVisibility(View.GONE);
+                } else {
+                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
+                    v.requestLayout();
+                }
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        v.startAnimation(a);
     }
 }

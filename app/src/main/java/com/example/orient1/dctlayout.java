@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class dctlayout extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,7 @@ public class dctlayout extends AppCompatActivity {
         // Building buttons with responsive dialogs
         setupButton(R.id.btn_st_nicholas,
                 "St. Nicholas Building",
-                R.drawable.sd,
+                R.drawable.sn,
                 getString(R.string.st_nicholas_description));
 
         setupButton(R.id.btn_san_lorenzo,
@@ -67,7 +66,7 @@ public class dctlayout extends AppCompatActivity {
 
         setupButton(R.id.btn_our_lady_fatima,
                 "Our Lady of Fatima Building",
-                R.drawable.olp,
+                R.drawable.olf,
                 getString(R.string.our_lady_fatima_description));
 
         setupButton(R.id.btn_st_catherine,
@@ -121,7 +120,7 @@ public class dctlayout extends AppCompatActivity {
         dialog.show();
 
         // Adjust dialog width for different screens
-        int width = (int)(getResources().getDisplayMetrics().widthPixels * 0.9);
+        int width = (int) (getResources().getDisplayMetrics().widthPixels * 0.9);
         dialog.getWindow().setLayout(width, ConstraintLayout.LayoutParams.WRAP_CONTENT);
     }
 }
