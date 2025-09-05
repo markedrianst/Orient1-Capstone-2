@@ -47,5 +47,14 @@ public class arselection extends AppCompatActivity {
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
+
+        // Handle Unity AR button click
+//        Button unityARButton = findViewById(R.id.ARbutton); // add this button in your XML
+//        unityARButton.setOnClickListener(v -> {
+//            // This opens Unity scene
+//            Intent unityIntent = new Intent(arselection.this, com.unity3d.player.UnityPlayerActivity.class);
+//            startActivity(unityIntent);
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        });
     }
 }
