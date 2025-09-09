@@ -3,17 +3,26 @@ plugins {
 }
 
 android {
-    namespace = "com.example.orient1"
+    namespace = "com.orient1caps2.orient1"
     compileSdk = 35
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
 
     defaultConfig {
-        applicationId = "com.example.orient1"
+        applicationId = "com.orient1caps2.orient1"
         minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // Append the required ABI filters in Kotlin DSL
+            abiFilters += setOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        }
     }
 
     buildTypes {
@@ -32,16 +41,21 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+
     implementation(libs.appcompat)
     implementation("com.google.android.material:material:1.12.0")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("androidx.viewpager2:viewpager2:1.1.0")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.recyclerview:recyclerview:1.4.0")
-    implementation ("me.relex:circleindicator:2.1.6")
-    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("me.relex:circleindicator:2.1.6")
+    implementation("androidx.cardview:cardview:1.0.0")
     //implementation("com.github.smarteist:autoimageslider:1.4.0")  // ✅ From JitPack
     implementation("com.github.bumptech.glide:glide:4.11.0")
     testImplementation(libs.junit)

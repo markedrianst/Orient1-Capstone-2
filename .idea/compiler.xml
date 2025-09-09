@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Orient_1.launcher" target="21" />
+      <module name="Orient_1.unityLibrary" target="21" />
+      <module name="Orient_1.unityLibrary.xrmanifest.androidlib" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

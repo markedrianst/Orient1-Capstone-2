@@ -20,4 +20,11 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Orient 1"
+//include(":app")
 include(":app")
+//project(":unityLibrary").projectDir = File(rootDir, "unityLibrary")
+//include(":app", ":unityLibrary")
+//
+//include(":unityLibrary")
+//include(":unityLibrary:xrmanifest.androidlib")
+//include(":launcher")
